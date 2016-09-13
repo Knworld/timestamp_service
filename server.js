@@ -6,7 +6,7 @@ var path = require('path');
 function parseTime(query){
     var timeObj = {"unix":null, "natural":null};
     var ptn_unix = /^\d+$/;
-    var thisMoment = moment(query);
+    var thisMoment = ptn_unix.test(query) ? moment(query, "X") : moment(query);
     
     if(ptn_unix.test(query)){
         thisMoment = moment(query, "X");
@@ -37,6 +37,6 @@ app.use(function(req, res){
 });
 */
 
-app.listen(8080, function(){
+app.listen(80, function(){
     //console.log('Example app listening on port 8080');
 })
