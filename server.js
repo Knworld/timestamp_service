@@ -37,6 +37,6 @@ app.use(function(req, res){
 });
 */
 
-app.listen($PORT, function(){
+app.listen(process.env.PORT || $PORT, function(){
     //console.log('Example app listening on port 8080');
 })
